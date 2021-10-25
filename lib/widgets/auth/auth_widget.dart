@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/constants.dart';
+import 'package:themoviedb/widgets/auth/login_form_widget.dart';
 
 class AuthWidget extends StatefulWidget {
   const AuthWidget({Key? key}) : super(key: key);
@@ -25,11 +26,34 @@ class _AuthWidgetState extends State<AuthWidget> {
               child: Column(
                 children: [
                   Text(
-                      'In order to use the editing and rating capabilities of TMDB, as well as get personal recommendations you will need to login to your account. If you do not have an account, registering for an account is free and simple. Click here to get started.'),
+                    'In order to use the editing and rating capabilities of TMDB, as well as get personal recommendations you will need to login to your account. If you do not have an account, registering for an account is free and simple. Click here to get started.',
+                    style: kDefaultTextStyle,
+                  ),
+                  SizedBox(height: 12),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Register'),
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all(kMainLightBlueColor),
+                    ),
+                  ),
                   SizedBox(height: 16.0),
                   Text(
-                      'If you signed up but didn\'t get your verification email, click here to have it resent.'),
+                    'If you signed up but didn\'t get your verification email, click here to have it resent.',
+                    style: kDefaultTextStyle,
+                  ),
+                  SizedBox(height: 12),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Verify your email'),
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all(kMainLightBlueColor),
+                    ),
+                  ),
                   SizedBox(height: 32.0),
+                  LoginFormWidget(),
                 ],
               ),
             ),
