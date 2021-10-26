@@ -3,7 +3,7 @@ import 'package:themoviedb/constants.dart';
 import 'package:themoviedb/widgets/auth/login_form_widget.dart';
 
 class AuthWidget extends StatefulWidget {
-  const AuthWidget({Key? key}) : super(key: key);
+  static const String id = 'auth_screen';
 
   @override
   _AuthWidgetState createState() => _AuthWidgetState();
