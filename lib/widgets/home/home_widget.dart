@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/constants.dart';
 
 class HomeScreenWidget extends StatefulWidget {
   static const String id = 'home_screen';
@@ -8,11 +9,48 @@ class HomeScreenWidget extends StatefulWidget {
 }
 
 class _HomeScreenWidgetState extends State<HomeScreenWidget> {
+  static const List<Widget> _tabsContent = [
+    Text('Home screen'),
+    Text('Movies list screen'),
+    Text('Tv shows list screen'),
+  ];
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Home screen.'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TMDB'),
+      ),
+      body: Center(
+        child: _tabsContent[_selectedIndex],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: kMainBlueColor,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.movie),
+            label: 'Movies',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.tv),
+            label: 'TV shows',
+          ),
+        ],
       ),
     );
   }
