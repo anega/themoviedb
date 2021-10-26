@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/constants.dart';
+import 'package:themoviedb/widgets/home/home_widget.dart';
 
 class LoginFormWidget extends StatefulWidget {
   const LoginFormWidget({Key? key}) : super(key: key);
@@ -108,9 +109,8 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               TextButton(
                 onPressed: () {
                   if (_loginFormKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Email is valid.')),
-                    );
+                    Navigator.of(context)
+                        .pushReplacementNamed(HomeScreenWidget.id);
                   }
                 },
                 child: Text('Login'),
