@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/components/login_form.dart';
 import 'package:themoviedb/constants.dart';
-import 'package:themoviedb/widgets/auth/login_form_widget.dart';
 
-class AuthWidget extends StatefulWidget {
+class AuthScreen extends StatefulWidget {
   static const String id = 'auth_screen';
 
   @override
-  _AuthWidgetState createState() => _AuthWidgetState();
+  _AuthScreenState createState() => _AuthScreenState();
 }
 
-class _AuthWidgetState extends State<AuthWidget> {
+class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +64,7 @@ class _AuthWidgetState extends State<AuthWidget> {
                     ),
                   ),
                   SizedBox(height: 20.0),
-                  LoginFormWidget(),
+                  LoginForm(),
                 ],
               ),
             ),

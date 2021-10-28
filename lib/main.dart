@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/constants.dart';
-import 'package:themoviedb/widgets/auth/auth_widget.dart';
-import 'package:themoviedb/widgets/home/home_widget.dart';
+import 'package:themoviedb/screens/auth_screen.dart';
+import 'package:themoviedb/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
           backgroundColor: kMainBlueColor,
         ),
       ),
-      initialRoute: AuthWidget.id,
+      initialRoute: AuthScreen.id,
       routes: {
-        AuthWidget.id: (context) => AuthWidget(),
-        HomeScreenWidget.id: (context) => HomeScreenWidget(),
+        AuthScreen.id: (context) => AuthScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
     );
   }

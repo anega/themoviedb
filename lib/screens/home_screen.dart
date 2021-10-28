@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/constants.dart';
-import 'package:themoviedb/widgets/movies_screen/movies_screen_widget.dart';
+import 'package:themoviedb/screens/movies_screen.dart';
 
-class HomeScreenWidget extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
 
   @override
-  _HomeScreenWidgetState createState() => _HomeScreenWidgetState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenWidgetState extends State<HomeScreenWidget> {
+class _HomeScreenState extends State<HomeScreen> {
   static const List<Widget> _tabsContent = [
     Text('Home screen'),
-    MoviesScreenWidget(),
+    MoviesScreen(),
     Text('Tv shows list screen'),
   ];
   int _selectedIndex = 0;

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:themoviedb/constants.dart';
-import 'package:themoviedb/widgets/home/home_widget.dart';
+import 'package:themoviedb/screens/home_screen.dart';
 
-class LoginFormWidget extends StatefulWidget {
-  const LoginFormWidget({Key? key}) : super(key: key);
+class LoginForm extends StatefulWidget {
+  const LoginForm({Key? key}) : super(key: key);
 
   @override
-  _LoginFormWidgetState createState() => _LoginFormWidgetState();
+  _LoginFormState createState() => _LoginFormState();
 }
 
-class _LoginFormWidgetState extends State<LoginFormWidget> {
+class _LoginFormState extends State<LoginForm> {
   final _loginFormKey = GlobalKey<FormState>();
   final _emailCtrl = TextEditingController();
   final _passwordCtrl = TextEditingController();
@@ -109,8 +109,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               TextButton(
                 onPressed: () {
                   if (_loginFormKey.currentState!.validate()) {
-                    Navigator.of(context)
-                        .pushReplacementNamed(HomeScreenWidget.id);
+                    Navigator.of(context).pushReplacementNamed(HomeScreen.id);
                   }
                 },
                 child: Text('Login'),
