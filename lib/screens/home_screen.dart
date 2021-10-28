@@ -10,11 +10,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static final List<Widget> _tabsContent = [
-    Text('Home screen'),
-    MoviesScreen(),
-    Text('Tv shows list screen'),
-  ];
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -29,8 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('TMDB'),
       ),
-      body: Center(
-        child: _tabsContent[_selectedIndex],
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: [
+          Text('Home screen'),
+          MoviesScreen(),
+          Text('Tv shows list screen'),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: kMainBlueColor,
