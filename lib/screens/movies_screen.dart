@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/model/movies_data.dart';
 
 class MoviesScreen extends StatelessWidget {
-  const MoviesScreen({Key? key}) : super(key: key);
+  final _moviesList = MoviesData.moviesList;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.symmetric(vertical: 32.0, horizontal: 16.0),
-      itemCount: 6,
+      itemCount: _moviesList.length,
       itemExtent: 140.0,
       itemBuilder: (BuildContext context, int index) {
         return Stack(
@@ -29,7 +30,7 @@ class MoviesScreen extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 16.0),
               child: Row(
                 children: [
-                  Image.asset('images/dune.jpg'),
+                  Image.asset(_moviesList[index].image),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(12.0, 12.0, 8.0, 12.0),
@@ -37,7 +38,7 @@ class MoviesScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Dune',
+                            _moviesList[index].title,
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16.0,
@@ -49,7 +50,7 @@ class MoviesScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 4.0),
                           Text(
-                            'September 15, 2021',
+                            _moviesList[index].releaseDate,
                             style: TextStyle(
                               color: Color(0xFF999999),
                               fontSize: 14.4,
@@ -59,7 +60,7 @@ class MoviesScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 20.0),
                           Text(
-                            'Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet\'s exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity\'s greatest potential-only those who can conquer their fear will survive.',
+                            _moviesList[index].description,
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 14.4,
