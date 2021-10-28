@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static const List<Widget> _tabsContent = [
+  static final List<Widget> _tabsContent = [
     Text('Home screen'),
     MoviesScreen(),
     Text('Tv shows list screen'),
